@@ -24,3 +24,27 @@ struct node *insert(struct node *node, int data)
         return node; // return the (unchanged) node pointer
     }
 }
+
+int search(node *temp, int target)
+{
+    if (temp == NULL)
+    { // Base case == empty tree
+        return false;
+    }
+    else
+    {
+        if (target == temp->data)
+            return true; // Do you remember LR(P)?
+        else
+        {
+            if (target < temp->data)
+            {
+                return (search(temp->left, target));
+            }
+            else
+            {
+                return (search(temp->right, target));
+            }
+        }
+    }
+}

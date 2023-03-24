@@ -20,4 +20,6 @@ int main()
     deleteNode(root, 40);
     cout << endl;
     display(root);
+    cout << endl;
+    cout << getHeight(root) << endl;
 }

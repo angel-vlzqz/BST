@@ -1,11 +1,9 @@
 #include <iostream>
+#include "Tree.hpp"
 
-#include "Adder.hpp"
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
-    std::cout << Add(1, 2) << std::endl;
-
-    return 0;
+    cout << "test" << endl;
 }

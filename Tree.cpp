@@ -1,6 +1,7 @@
 #include "Tree.hpp"
 #include <iostream>
 
+using namespace std;
 struct node *insert(struct node *node, int data)
 {
     if (node == NULL)
@@ -46,5 +47,19 @@ int search(node *temp, int target)
                 return (search(temp->right, target));
             }
         }
+    }
+}
+
+void display(node *temp)
+{
+    if (temp == NULL)
+    { // base case or empty tree
+        return;
+    }
+    else
+    {
+        display(temp->left); // LPR in a recursive call.
+        cout << temp->data << " ";
+        display(temp->right);
     }
 }

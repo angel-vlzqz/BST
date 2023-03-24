@@ -9,3 +9,4 @@ struct node
 
 struct node *insert(struct node *node, int data);
 int search(node *temp, int target);
+void display(node *temp);

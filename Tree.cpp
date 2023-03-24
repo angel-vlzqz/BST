@@ -5,6 +5,7 @@ using namespace std;
 
 struct node *insert(struct node *node, int data)
 {
+    // O(nlog(n))
     if (node == NULL)
     { // if this is an empty tree, make the root
         struct node *temp = new (struct node);

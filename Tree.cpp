@@ -3,7 +3,7 @@
 
 using namespace std;
 
-struct node *insert(struct node *node, int data)
+struct node *insert(struct node *node, string data)
 {
     // O(nlog(n))
     if (node == NULL)
@@ -28,7 +28,7 @@ struct node *insert(struct node *node, int data)
     }
 }
 
-int search(node *temp, int target)
+int search(node *temp, string target)
 {
     // O(h)
     // h is height of the tree
@@ -80,7 +80,7 @@ node *minVal(struct node *node)
 // when we call this, we only want  left.  If NULL, we deleted a leaf, so
 // no worries about making a forest.
 
-struct node *deleteNode(struct node *root, int key)
+struct node *deleteNode(struct node *root, string key)
 {
     if (root == NULL)
     {

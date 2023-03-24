@@ -2,6 +2,14 @@
 #include <iostream>
 
 using namespace std;
+
+struct node
+{
+    int data;
+    struct node *left;
+    struct node *right;
+};
+
 struct node *insert(struct node *node, int data)
 {
     if (node == NULL)
@@ -28,6 +36,8 @@ struct node *insert(struct node *node, int data)
 
 int search(node *temp, int target)
 {
+    // O(h)
+    // h is height of the tree
     if (temp == NULL)
     { // Base case == empty tree
         return false;
@@ -109,4 +119,16 @@ struct node *deleteNode(struct node *root, int key)
         root->right = deleteNode(root->right, key);
     }
     return root;
+}
+
+int getHeight(struct node *node)
+{
+    if (node == NULL)
+    {
+        return -1; // an empty tree is defined as -1
+    }
+    else
+    {
+        return max(getHeight(node->left), getHeight(node->right)) + 1;
+    }
 }

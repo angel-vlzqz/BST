@@ -6,11 +6,11 @@ struct node *insert(struct node *node, int data)
 {
     if (node == NULL)
     { // if this is an empty tree, make the root
-        struct node *node = new (struct node);
-        node->data = data;
-        node->left = NULL;
-        node->right = NULL;
-        return node;
+        struct node *temp = new (struct node);
+        temp->data = data;
+        temp->left = NULL;
+        temp->right = NULL;
+        return temp;
     }
     else
     { // if there is a root, place data in the correct side
@@ -63,3 +63,15 @@ void display(node *temp)
         display(temp->right);
     }
 }
+
+node *minVal(struct node *node)
+{                                // returns a pointer
+    struct node *current = node; // our new node to do the work
+    while (current && current->left != NULL)
+    {
+        current = current->left;
+    }
+    return current;
+}
+// when we call this, we only want  left.  If NULL, we deleted a leaf, so
+// no worries about making a forest.

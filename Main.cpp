@@ -23,7 +23,9 @@ int main()
     display(root);
     cout << endl;
     cout << "height of tree: " << getHeight(root) << endl;
-    cout << endl << endl << endl;
+    cout << endl
+         << endl
+         << endl;
 
     string loop = "test";
     while (loop != "-1")
@@ -32,10 +34,21 @@ int main()
         cin >> loop;
         cout << endl;
 
-        if (search(root, loop) && loop != "-1")
+        if (search(root, loop))
         {
-            cout << loop << " was found in the tree!" << endl;
+            root = deleteNode(root, loop);
+            display(root);
+            cout << endl
+                 << endl
+                 << endl;
+            cout << loop << " was found in the tree! it has now been deleted." << endl;
+            cout << "height of tree: " << getHeight(root) << endl;
         }
+        else if (loop == "-1")
+        {
+            break;
+        }
+
         else
         {
             cout << loop << " was not found in the tree :(" << endl;

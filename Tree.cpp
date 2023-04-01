@@ -87,22 +87,20 @@ node *minVal(struct node *node)
     }
     return current;
 }
-// when we call this, we only want  left.  If NULL, we deleted a leaf, so
-// no worries about making a forest.
 
-struct node *deleteNode(struct node *root, string key)
+struct node *deleteNode(struct node *root, string data)
 {
     if (root == NULL)
     {
         return root;
     }
-    if (key < root->data)
+    if (data < root->data)
     {
-        root->left = deleteNode(root->left, key);
+        root->left = deleteNode(root->left, data);
     }
-    else if (key > root->data)
+    else if (data > root->data)
     {
-        root->right = deleteNode(root->right, key);
+        root->right = deleteNode(root->right, data);
     }
     else
     {
@@ -120,7 +118,7 @@ struct node *deleteNode(struct node *root, string key)
         }
         struct node *temp = minVal(root->right);
         root->data = temp->data;
-        root->right = deleteNode(root->right, key);
+        root->right = deleteNode(root->right, data);
     }
     return root;
 }

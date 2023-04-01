@@ -42,4 +42,5 @@ int main()
         }
     }
 
+    cout << "cya!" << endl;
 }

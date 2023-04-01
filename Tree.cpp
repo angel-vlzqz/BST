@@ -19,10 +19,14 @@ struct node *insert(struct node *node, string data)
         if (data < node->data)
         {
             node->left = insert(node->left, data); // RECURSIVE FUNCTION
-        }                                          // remember LR(P)?
-        else
+        }
+        else if (data > node->data)
         {
             node->right = insert(node->right, data); // RECURSIVE FUNCTION
+        }
+        else //  duplicate
+        {
+            return node;
         }
         return node; // return the (unchanged) node pointer
     }

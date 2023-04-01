@@ -24,11 +24,11 @@ struct node *insert(struct node *node, string data)
     { // if there is a root, place data in the correct side
         if (data < node->data)
         {
-            node->left = insert(node->left, data); // RECURSIVE FUNCTION
+            node->left = insert(node->left, data);
         }
         else if (data > node->data)
         {
-            node->right = insert(node->right, data); // RECURSIVE FUNCTION
+            node->right = insert(node->right, data);
         }
         else //  duplicate
         {
@@ -49,7 +49,7 @@ int search(node *temp, string target)
     else
     {
         if (target == temp->data)
-            return true; // Do you remember LR(P)?
+            return true;
         else
         {
             if (target < temp->data)
@@ -72,7 +72,7 @@ void display(node *temp)
     }
     else
     {
-        display(temp->left); // LPR in a recursive call.
+        display(temp->left);
         cout << temp->data << " ";
         display(temp->right);
     }

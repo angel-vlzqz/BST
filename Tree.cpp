@@ -3,6 +3,12 @@
 
 using namespace std;
 
+struct node
+{
+    string data;
+    struct node *left;
+    struct node *right;
+};
 struct node *insert(struct node *node, string data)
 {
     // O(nlog(n))
